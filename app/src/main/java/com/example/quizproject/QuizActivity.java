@@ -80,28 +80,25 @@ public class QuizActivity extends AppCompatActivity {
 
     private void displayNextQuestion() {
         if (currentQuestionIndex < questionList.size()) {
-            // Display the current question and options
             Question currentQuestion = questionList.get(currentQuestionIndex);
+
+            // Update UI with the current question and options
             questionTextView.setText(currentQuestion.getQuestion());
             option1Button.setText(currentQuestion.getOptionA());
             option2Button.setText(currentQuestion.getOptionB());
             option3Button.setText(currentQuestion.getOptionC());
             option4Button.setText(currentQuestion.getOptionD());
+            scoreTextView.setText("Score: " + score);
 
             // Start the timer for the current question
             startTimer();
 
-            // Move to the next question
             currentQuestionIndex++;
         } else {
-            // Quiz is complete, navigate to the score summary
-            Intent intent = new Intent(QuizActivity.this, ScoreSummaryActivity.class);
-            intent.putExtra("FINAL_SCORE", score);
-            startActivity(intent);
-            finish();
+            // End of quiz, navigate to score summary
+            goToScoreSummary();
         }
     }
-
 
     private void startTimer() {
         // Cancel any existing timer before starting a new one
@@ -118,7 +115,7 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 Toast.makeText(QuizActivity.this, "Time's up!", Toast.LENGTH_SHORT).show();
-                displayNextQuestion();  // Automatically moves to the next question
+                displayNextQuestion();  // Automatically move to the next question after time ends
             }
         }.start();
     }
@@ -143,8 +140,15 @@ public class QuizActivity extends AppCompatActivity {
         }
         scoreTextView.setText("Score: " + score);
 
-        // Move to the next question
+        // Move to the next question after checking the answer
         displayNextQuestion();
+    }
+
+    private void goToScoreSummary() {
+        Intent intent = new Intent(QuizActivity.this, ScoreSummaryActivity.class);
+        intent.putExtra("FINAL_SCORE", score);
+        startActivity(intent);
+        finish();
     }
 
     @Override
