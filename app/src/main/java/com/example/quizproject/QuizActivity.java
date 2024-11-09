@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.widget.Button;
 import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
@@ -124,6 +125,9 @@ public class QuizActivity extends AppCompatActivity {
         Button[] options = {option1Button, option2Button, option3Button, option4Button};
         for (Button option : options) {
             option.setOnClickListener(view -> {
+                // Change the button background color on selection
+
+
                 // Check answer and update score if correct
                 checkAnswer(((Button) view).getText().toString());
             });
