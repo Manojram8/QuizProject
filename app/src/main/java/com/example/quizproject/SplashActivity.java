@@ -1,4 +1,9 @@
-import static androidx.core.content.ContextCompat.startActivity;
+package com.example.quizproject;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -10,7 +15,7 @@ public class SplashActivity extends AppCompatActivity {
         // Navigate to Home Screen after 2 seconds
         new Handler().postDelayed(() -> {
             startActivity(new Intent(SplashActivity.this, HomeActivity.class));
-            finish();
-        }, 2000);
+            finish();  // Finish the SplashActivity to prevent going back to it
+        }, 2000);  // 2-second delay
     }
 }

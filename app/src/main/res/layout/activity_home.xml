@@ -1,42 +1,71 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A8E6CF">
+    android:background="#A8E6CF"
+    android:padding="16dp">
 
-    <!-- Nature Card -->
-    <TextView
+    <!-- Card for Nature -->
+    <androidx.cardview.widget.CardView
         android:id="@+id/cardNature"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nature"
-        android:background="@drawable/card_background"
-        android:layout_margin="16dp"
-        android:textSize="24sp"
-        android:gravity="center"/>
+        android:layout_marginBottom="16dp"
+        card_view:cardCornerRadius="8dp"
+        card_view:cardElevation="4dp">
 
-    <!-- Science Card -->
-    <TextView
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nature"
+            android:textSize="24sp"
+            android:padding="16dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="#4CAF50"/>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Card for Science -->
+    <androidx.cardview.widget.CardView
         android:id="@+id/cardScience"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Science"
-        android:background="@drawable/card_background"
         android:layout_below="@id/cardNature"
-        android:layout_margin="16dp"
-        android:textSize="24sp"
-        android:gravity="center"/>
+        android:layout_marginBottom="16dp"
+        card_view:cardCornerRadius="8dp"
+        card_view:cardElevation="4dp">
 
-    <!-- Computer Science Card -->
-    <TextView
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Science"
+            android:textSize="24sp"
+            android:padding="16dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="#FF5722"/>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Card for Computer Science -->
+    <androidx.cardview.widget.CardView
         android:id="@+id/cardComputerScience"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Computer Science"
-        android:background="@drawable/card_background"
         android:layout_below="@id/cardScience"
-        android:layout_margin="16dp"
-        android:textSize="24sp"
-        android:gravity="center"/>
+        android:layout_marginBottom="16dp"
+        card_view:cardCornerRadius="8dp"
+        card_view:cardElevation="4dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Computer Science"
+            android:textSize="24sp"
+            android:padding="16dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="#3F51B5"/>
+    </androidx.cardview.widget.CardView>
 
     <!-- History Button -->
     <Button
@@ -44,6 +73,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="View History"
+        android:textSize="18sp"
         android:layout_alignParentEnd="true"
-        android:layout_margin="16dp"/>
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/cardComputerScience"/>
 </RelativeLayout>

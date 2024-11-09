@@ -3,6 +3,7 @@
     android:layout_height="match_parent"
     android:background="#A8E6CF">
 
+    <!-- Amrita logo centered in the screen -->
     <ImageView
         android:id="@+id/amrita_logo"
         android:layout_width="wrap_content"
