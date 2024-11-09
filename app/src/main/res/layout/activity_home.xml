@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A8E6CF">
+
+    <!-- Nature Card -->
+    <TextView
+        android:id="@+id/cardNature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nature"
+        android:background="@drawable/card_background"
+        android:layout_margin="16dp"
+        android:textSize="24sp"
+        android:gravity="center"/>
+
+    <!-- Science Card -->
+    <TextView
+        android:id="@+id/cardScience"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Science"
+        android:background="@drawable/card_background"
+        android:layout_below="@id/cardNature"
+        android:layout_margin="16dp"
+        android:textSize="24sp"
+        android:gravity="center"/>
+
+    <!-- Computer Science Card -->
+    <TextView
+        android:id="@+id/cardComputerScience"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Computer Science"
+        android:background="@drawable/card_background"
+        android:layout_below="@id/cardScience"
+        android:layout_margin="16dp"
+        android:textSize="24sp"
+        android:gravity="center"/>
+
+    <!-- History Button -->
+    <Button
+        android:id="@+id/history_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View History"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"/>
+</RelativeLayout>
